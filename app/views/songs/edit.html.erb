@@ -8,10 +8,15 @@
     <br>
     
     <%= s.label :artist_id %>
-    <%= s.text_area :artist_id %>
+    <%= s.collection_select :artist_id, @artists, :id, :name %>
 
     <%= s.label :genre_id %>
-    <%= s.text_area :genre_id %>
+    <%= s.collection_select :genre_id, @genres, :id, :name %>
+
+    <!-- Since drop-down was implemented, final test will not pass unless: -->
+    <!-- <%= s.text_field :artist_id %> -->
+    <!-- <%= s.text_field :genre_id %> -->
+
 
     <br><br>
     <%= s.submit "Update Song" %>
